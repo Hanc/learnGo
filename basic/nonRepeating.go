@@ -22,6 +22,7 @@ func main() {
 	fmt.Println(lengthOfNonRepeatingSubStr("abcabcbb"))
 	fmt.Println(lengthOfNonRepeatingSubStr("中文测试"))
 	fmt.Println(game([]int{2, 2, 3}, []int{3, 2, 1}))
+	fmt.Println(runningSum([]int{1, 2, 3, 4}))
 }
 
 func game(guess []int, answer []int) int {
@@ -32,4 +33,11 @@ func game(guess []int, answer []int) int {
 		}
 	}
 	return count
+}
+
+func runningSum(nums []int) []int {
+	for i := 1; i < len(nums); i++ {
+		nums[i] += nums[i-1]
+	}
+	return nums
 }
