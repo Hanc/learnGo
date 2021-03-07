@@ -21,4 +21,15 @@ func lengthOfNonRepeatingSubStr(s string) int {
 func main() {
 	fmt.Println(lengthOfNonRepeatingSubStr("abcabcbb"))
 	fmt.Println(lengthOfNonRepeatingSubStr("中文测试"))
+	fmt.Println(game([]int{2, 2, 3}, []int{3, 2, 1}))
+}
+
+func game(guess []int, answer []int) int {
+	count := 0
+	for k, v := range guess {
+		if v == answer[k] {
+			count++
+		}
+	}
+	return count
 }
